@@ -1,4 +1,4 @@
-# AE4872-Satellite-Orbit-Determination Content:
+# AE4870A-Rocket-Motion Content:
 
 1. The complete course planning. (It automatically compiles a pdf with the planning, and more importantly, it automatically generates all the taskwarrior commands to add your tasks to your tasklist (taskwarrior).)
 2. Summaries for the course (a bit funky).
