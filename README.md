@@ -1,8 +1,7 @@
 # AE4870A-Rocket-Motion Content:
 
 1. The complete course planning. (It automatically compiles a pdf with the planning, and more importantly, it automatically generates all the taskwarrior commands to add your tasks to your tasklist (taskwarrior).)
-2. Summaries for the course (a bit funky).
-3. Old exam solutions, please contribute with your solutions! (just git clone, type your solution in the latex and send me a pull request.)
+2. Old exam solutions, please contribute with your solutions! (just git clone, type your solution in the latex and send me a pull request.)
 
 
 # How to use
@@ -25,10 +24,33 @@ To change (a copy of) this summary after you have installed TexMaker:
   
   3. Selected `PDFLatex` and `View PDF` (see next pic)
   
+  3.a Press `f2`,`f11` to compile the bibliography, followed by `f2` to include the bibliography in the report. Then:
+  
   4. Press `f6` to compile the pdf. (left triangle in pic below)
   
   ![1](./HowToUseTexMaker/3.png)
+  
   5. Press `f7` to preview the pdf in the right half of your screen. (Right triangle in pic below)
+  
   ![1](./HowToUseTexMaker/4.png)
+  
+## Configuring Texmaker for convenience ##
+Normally you can switch between your tabs/files with `Alt+PageDown` and `Alt+PageUp`. However if you also have FLux installed on windows, those shortcuts are already mapped to reducing the blue content in your screen. The shortcuts wont work in that case. To switch between screens fast with your keyboard:
+
+  7. Click Options.
+  
+  8. Click Configure Texmaker.
+  
+  ![1](./HowToUseTexMaker/5.png)
+
+  9. Click tab: "Shortcuts" and scroll down to Action: "Next Documents".
+  
+  10. Click the "shortcut" next to `Next Document` and Press the shortcut you want, e.g. press `Ctrl+PageDown`.
+  
+  ![1](./HowToUseTexMaker/6.png)
+  
+  11. Then do the same for the `Previous Document`
+
+
 
 If you are having troubles with any of the above steps/don't know how you do any of that, feel free to click on: "issue" and type your question :)
