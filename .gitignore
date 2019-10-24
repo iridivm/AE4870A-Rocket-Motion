@@ -11,3 +11,5 @@
 *.log
 *.synctex.gz
 *.dvi
+
+*.DS_Store
