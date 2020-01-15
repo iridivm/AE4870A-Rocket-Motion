@@ -1,1 +1,88 @@
 \section{ Multi stage rockets:V(height).alts.Multistage }\label{sec:q3}    
+\subsection{a}
+The velocity can be expressed in terms of the different $\Delta V$ components that have been given in the question. 
+
+For the initial velcity, 
+\begin{equation}
+V_\text{ignition} = 0\;\text{m/s}
+\end{equation}
+For the first stage velocity is just the first $\Delta V$. This includes the gravity losses.
+\begin{equation}
+V_\text{burnout1} = \Delta V_1\;\text{m/s}
+\end{equation}
+For the second stage velocity is just the first and second $\Delta V$. This includes the gravity losses.
+\begin{equation}
+V_\text{burnout2} = (\Delta V_1+\Delta V_2)\;\text{m/s}
+\end{equation}
+Culmination point is per definition:
+\begin{equation}
+V_\text{culimination} = 0\;\text{m/s}
+\end{equation}
+\subsection{b}
+The height can also be expressed in terms of altitude differences.
+\begin{equation}
+h_\text{ignition} = 0\;\text{m}
+\end{equation}
+For the first stage altitude is just the first $\Delta h$. 
+\begin{equation}
+h_\text{burnout1} = \Delta h_1\;\text{m}
+\end{equation}
+For the second stage it is just the first and second $\Delta V$ but now also includes the velocity due to the first stage times the burn time of the second stage. 
+\begin{equation}
+V_\text{burnout2} = (\Delta h_1+\Delta h_2+\Delta V_1t_{b_2})\;\text{m}
+\end{equation}
+Culmination point is the altitude up to burnout of stage 2. After that the altitude increase is computed with the energy equation:
+\begin{equation}
+\frac{1}{2}mV^2=mg_0\Delta h\;\rightarrow\;\Delta h = \frac{(\Delta V_1+\Delta V_2)^2}{2g_0}
+\end{equation}
+So the total altitude in the culmination point becomes
+\begin{equation}
+\Delta h_c =  (\Delta h_1+\Delta h_2+\Delta V_1t_{b_2})+\frac{(\Delta V_1+\Delta V_2)^2}{2g_0}
+\end{equation}
+
+\subsection{c}
+For the velocity, the gravity losses in the coast period has to be included.
+For the sake of brevity, the culmination and ignition velocity are omitted. The velocity after the first stage is 
+\begin{equation}
+V_\text{burnout1} = \Delta V_1\;\text{m/s}
+\end{equation}
+The velocity after the second stage, is the increase in velocity due to the two stage and includes a term for the gravity losses during the coasting period.
+\begin{equation}
+V_\text{burnout2} = (\Delta V_1-g_0t_{co}+\Delta V_2)\;\text{m/s}
+\end{equation}
+
+For the altitude, the ignition altitude is once again 0. The altitude after the first stage is not different.
+\begin{equation}
+h_\text{burnout1} = \Delta h_1\;\text{m}
+\end{equation}
+The altitude after the second stage is different. The velocity at the end of the second stage differs. There is an altitude increase due to the coast.
+\begin{equation}
+h_\text{burnout2} = \Delta h_1 + \Delta h_2 + \Delta V_1t_{co}-\frac{1}{2}g_0t_{co}^2+(\Delta V_1-g_0t_{co})t_{b_2}
+\end{equation}
+For the culmination point, the theory remains the same. The altitude already reached plus some term that is computed with the energy equation. The latter is:
+\begin{equation}
+\Delta h_c = \frac{(\Delta V_1-g_0t_{co}+\Delta V_2)^2}{2g_0}
+\end{equation}
+\begin{equation}
+h_c =  \Delta h_1 + \Delta h_2 + \Delta V_1t_{co}+(\Delta V_1-g_0t_{co})t_{b_2} + \frac{(\Delta V_1-g_0t_{co}+\Delta V_2)^2}{2g_0}
+\end{equation}
+which can be simplified to
+\begin{equation}
+h_c = \Delta h_1 +\Delta h_2 + \Delta Vt_{b_2}+\frac{(\Delta V_1+\Delta V_2)^2}{2g_0}-[\Delta V_2 + g_0t_{b_2}]t_{co}
+\end{equation}
+\begin{equation}
+h_c' = h_c -[\Delta V_2 + g_0t_{b_2}]t_{co}
+\end{equation}
+
+\subsection{d}
+The mass fraction $\Lambda$ becomes smaller for an increase in burnout mass of the stages. This means that the amount $\Delta V$ decreases. This means that both coasting altitude and culmination altitude will be lower. The gravity losses during the coast and to the culmination point are not affected.
+
+\subsection{e}
+By subtracting the culmnation altitude $h_c'$ found in (c) with the altitude $h_c$ found in (b), it can be seen what the effect is of the coasting.
+\begin{equation}
+\Delta h = h_c'-h_c = -[\Delta V_2 + g_0t_{b_2}]t_{co}
+\end{equation}
+What can be seen is that the $\Delta V$ which includes the gravity losses loses the gravity losses. So the $\Delta V$ is just given by the mass ratio and effective exhaust velocity of the second stage
+\begin{equation}
+\Delta h_c = -c_{{eff}_2}\ln \Lambda_2t_{co}
+\end{equation}
