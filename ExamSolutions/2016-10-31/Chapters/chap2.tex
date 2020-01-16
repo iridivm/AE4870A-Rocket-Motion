@@ -1,1 +1,306 @@
 \section{ Multi stage rockets:Multi stage. EOM vert flight.mass }\label{sec:q2}    
+\subsection{a}
+We start from the general equations of motion, which are split in EoM in x and z direction.
+\begin{equation}
+M\frac{dV_x}{dt}=T\cos\theta=mc_{eff}\cos\theta \tag{2.1.1a\cite{lectureNotes}}
+\end{equation}
+\begin{equation}
+M\frac{dV_z}{dt}=T\sin\theta=mc_{eff}\sin\theta-Mg_0 \tag{2.1.1b\cite{lectureNotes}}
+\end{equation}
+For vertical flight, the flight path angle is equal to the pitch angle $\theta_0=\gamma_0=\pi/2 \;(\alpha=0)$.
+Furthermore, the mass flow can be rewritten as (also on formula sheet)
+\begin{equation}
+m = -\frac{dM}{dt}
+\end{equation}
+Thus, the only equation that remains is the vertical velocity component.
+\begin{equation}
+M\frac{dV_z}{dt}=T=mc_{eff}-Mg_0=-\frac{dM}{dt}c_{eff}-Mg_0 
+\label{eq:EoMVertical}
+\end{equation}
+
+\subsection*{Burnout velocity}
+Now, they ask first for an expression of the velocity at burn out. This means that entire duration, the flight is powered (With thrust). Thus, only a single equation is needed. The equation for the velocity can be derived from \cref{eq:EoMVertical}. 
+\begin{equation}
+M\frac{dV_z}{dt}=-\frac{dM}{dt}c_{eff}-Mg_0
+\end{equation}
+\begin{equation}
+\frac{dV_z}{dt}=-\frac{1}{M}\frac{dM}{dt}c_{eff}-g_0
+\end{equation}
+\begin{equation}
+dV_z=-\frac{1}{M}{dM}c_{eff}-g_0dt
+\end{equation}
+\begin{equation}
+V_z-V_{z_0}=-(\ln M- \ln M_0)c_{eff}-g_0(t-t_0)
+\end{equation}
+\begin{equation}
+V_z-V_{z_0}=(\ln M_0- \ln M)c_{eff}-g_0(t-t_0)
+\end{equation}
+\begin{equation}
+V_z-V_{z_0}=\ln\frac{M_0}{M}c_{eff}-g_0(t-t_0)
+\end{equation}
+where the initial values for velocity and time are zero.
+\begin{equation}
+V_z=\ln\frac{M_0}{M}c_{eff}-g_0t
+\end{equation}
+Furthermore, they ask to put the equation in terms of $c_{eff}, \Lambda, \psi_0$ the first two are used. The mass fraction is in terms of the initial mass and mass at burnout $M_0/M_e$. Thus, the equation can be expressed as the velocity at burnout.
+\begin{equation}
+V_e=\ln\Lambda c_{eff}-g_0t_b
+\end{equation}
+
+\subsection*{Burnout height}
+The standard equation for the distance is given by
+\begin{equation}
+Z = \int_{0}^{t_b}=Vdt \;\text{where}\; V=\ln\frac{M_0}{M} c_{eff}-g_0t
+\end{equation}
+The integral can be rewritten for the first part of the velocity by knowing $dt = -dM/m$.
+\begin{equation}
+Z = -\int_{M_0}^{M_e}\ln\frac{M_0}{M} c_{eff}\frac{dM}{m}-\int_{0}^{t_b}g_0tdt
+\end{equation}
+First consider the first integral.
+\begin{equation}
+-\int_{M_0}^{M_e}\ln\frac{M_0}{M} c_{eff}\frac{dM}{m}=-\frac{c_{eff}}{m}\int_{M_0}^{M_e}(\ln M_0-\ln M) dM
+\end{equation}
+With the identity given in the question, the integral is solved to:
+\begin{equation}
+-\frac{c_{eff}}{m}\int_{M_0}^{M_e}(\ln M_0-\ln M) dM=-\frac{c_{eff}}{m}[(M\ln M_0)-(M\ln M-M)]_{M_0}^{M_e}
+\end{equation}
+Writing this out becomes
+\begin{equation}
+-\frac{c_{eff}}{m}[(M_e\ln M_0-M_0\ln M_0)-((M_e\ln M_e-M_e)-(M_0\ln M_0-M_0))]
+\end{equation}
+By eliminating the obvious ones.
+\begin{equation}
+-\frac{c_{eff}}{m}[(M_e\ln M_0)-(M_e\ln M_e-M_e+M_0)]=-\frac{c_{eff}}{m}[M_e\ln\frac{M_0}{M_e}+M_e-M_0]
+\end{equation}
+Now the tricky part starts. We multiply the equation by $M_0/M_0$
+\begin{equation}
+-\frac{c_{eff}M_0}{m}[\frac{M_e}{M_0}\ln\frac{M_0}{M_e}+\frac{M_e}{M_0}-\frac{M_0}{M_0}]=-\frac{c_{eff}M_0}{m}[\frac{1}{\Lambda}\ln\Lambda+\frac{1}{\Lambda}-1]=\frac{c_{eff}M_0}{m}[1-\frac{1}{\Lambda}(\ln\Lambda+1)]
+\end{equation}
+
+The second integral is easily found to be 
+\begin{equation}
+\int_{0}^{t_b}g_0tdt = 0.5g_0t_b^2
+\end{equation}
+Thus, the total height becomes
+\begin{equation}
+Z = \frac{c_{eff}M_0}{m}[1-\frac{1}{\Lambda}(\ln\Lambda+1)]-0.5g_0t_b^2
+\end{equation}
+where 
+\begin{equation}
+\frac{c_{eff}M_0}{m}=\frac{c_{eff}^2M_0g_0}{mc_{eff}g_0}=\frac{c_{eff}^2}{\psi_0g_0} \;\text{where}\;\frac{M_0g_0}{mc_{eff}}=\frac{1}{\psi_0}
+\end{equation}
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}[1-\frac{1}{\Lambda}(\ln\Lambda+1)]-0.5g_0t_b^2
+\end{equation}
+
+Furthermore, we need to find an expression for the burn time. This can be obtained from the fact that the mass flow is constant over time.
+\begin{equation}
+t = \frac{M_0-M}{m}=c_{eff}\frac{M_0-M}{T}
+\end{equation}
+By creating the collective term $M_0$ and multiplying the equation by $g_0/g_0$
+\begin{equation}
+t = c_{eff}\frac{M_0g_0(1-\frac{M}{M_0})}{Tg_0}
+\end{equation} 
+and realizing that 
+\begin{equation}
+\frac{M_0g_0}{Tg_0}=\frac{1}{g_0\psi_0}
+\end{equation}
+we get that the burn time is 
+\begin{equation}
+t_b = c_{eff}\frac{(1-\frac{1}{\Lambda})}{\psi_0g_0}
+\end{equation}
+
+By integrating the expression for the burn time the burnout height can be expressed as
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}[1-\frac{1}{\Lambda}(\ln\Lambda+1)]-\frac{1}{2}g_0[c_{eff}\frac{(1-\frac{1}{\Lambda})}{\psi_0g_0}]^2
+\end{equation}
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}[1-\frac{1}{\Lambda}(\ln\Lambda+1)]-\frac{c_{eff}^2}{2\psi_0^2g_0}(1-\frac{1}{\Lambda})^2
+\end{equation}
+Which can be simplified even further
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}\Bigg([1-\frac{1}{\Lambda}(\ln\Lambda+1)]-\frac{1}{2\psi_0}(1-\frac{1}{\Lambda})^2\Bigg)
+\end{equation}
+
+\subsection{b}
+For this question, the mass of the boosters is know and the mass after the burn is known for the core stage. So we need to find the amount of propellant that is used by the core stage. This can be done with the specific impulse equation, given in the formula sheet.  
+\begin{equation}
+I_{sp}=\frac{T}{mg_0}
+\end{equation}
+We know the burn time, the thrust, the specific impulse and the gravitational parameter. This means that we can find the mass flow.
+\begin{equation}
+m = \frac{T}{I_{sp}g_0}=\frac{1000000}{300\cdot9.81}=339.789 \text{kg/s}
+\end{equation}
+Multiplying the mass flow with the burn time yields the total propellant mass that is used by the core stage.
+\begin{equation}
+M = mt_b = 339.789\cdot260=88345.14 \text{kg}
+\end{equation}
+Adding all the boosters and the mass after the burnout, yields the total mass of the rocket.
+\begin{equation}
+M_{tot} = 9M_b+M_e+M_p=9\cdot10000+10000+88345.14 = 188345.14 \text{kg}
+\end{equation}
+
+\subsection{c}
+For the acceleration at launch from the standard EoM, where the thrust is due to the core and SIX boosters
+\begin{equation}
+M\frac{dV}{dt}=T-Mg_0\;\rightarrow\; \frac{dV}{dt} = \frac{T}{M}-g_0
+\end{equation}
+All parameters are known so just fill in
+\begin{equation}
+\frac{dV}{dt} = \frac{T}{M}-g_0 = \frac{2800000}{188345.14}-g_0=5.056\text{m/s}^2
+\end{equation}
+
+For the acceleration after ignition of the second set of boosters. The total mass is reduced. OBviously six boosters are gone plus for the core stage, some propellant is gone.
+First to find the mass of the rocket after the ignition of the second set of boosters.
+\begin{equation}
+M_core = M_e+M_p-m\cdot t=10000+88345.14-339.789\cdot60=77957.8\text{kg}
+\end{equation}
+Now the thurst is determined by the core plus three boosters
+\begin{equation}
+\frac{dV}{dt} = \frac{T}{M}-g_0 = \frac{1900000}{77957.8+30000}-g_0=7.7985\text{m/s}^2
+\end{equation}
+
+For the burnout at the core stage, no thurst is applied anymore. So only the gravitational acceleration is acting.
+\begin{equation}
+\frac{dV}{dt} = \frac{T}{M}-g_0 = \frac{0}{10000}-g_0=-9.81\text{m/s}^2
+\end{equation}
+
+\subsection{d}
+The equations found for the first sub question is used. Make sure to take into account that for the second part of this question, the initial velocity and height is not equal to zero!
+
+For the velocity at the instant of burnout (assumed that mass of the boosters is gone). The velocity only depends on the burn time,$c_{eff}$ and the mass ratio.
+
+The effective exhaust velocity can be found with the specific impulse and gravitational paramter. The burn time is given $t_b=60$ s.
+\begin{equation}
+V_e=\ln\Lambda c_{eff}-g_0t_b
+\end{equation}
+For effective velocity, a combination can be computed since the thurst is constant. 
+\begin{equation}
+\bar{c}_{eff}=\frac{T_1+T_2+...}{m_1+m_2+...}
+\end{equation}
+The mass flow is found since the thrust and the specific impulse is known.
+\begin{equation}
+m=\frac{T}{I_{sp}g_0}
+\end{equation}
+The mass flow for the booster is 
+\begin{equation}
+m=\frac{T}{I_{sp}g_0} = \frac{300000}{200\cdot 9.81}=152.905 \text{kg/s}
+\end{equation}
+The combined effective velocity is 
+\begin{equation}
+\bar{c}_{eff} = \frac{300000\cdot6+1000000}{152.905\cdot6+339.789}=2227.138 \text{m/s}
+\end{equation}
+The mass at burnout is 
+\begin{equation}
+M_e = M_0-(6\cdot m_{Booster}-m_{core})t_{burn}=188345.14-75433.14=112912 \text{kg}
+\end{equation}
+Filling in the velocity equation, becomes.
+\begin{equation}
+V_e=\ln\Lambda c_{eff}-g_0t_b = \ln\frac{188345.14}{112912} \cdot2227.138-9.81\cdot60=550.954 \text{m/s}
+\end{equation}
+
+For the height, the initial thrust load needs to be known. This can be found with
+\begin{equation}
+\psi_0=\frac{T}{M_0g_0}=\frac{2800000}{188345.14\cdot9.81}=1.5154
+\end{equation}
+With the initial thrust load, the effective exhaust velocity and the mass ratio $\Lambda=\frac{188345.14}{77957.8+30000}$, the height is found.
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}\Bigg([1-\frac{1}{\Lambda}(\ln\Lambda+1)]-\frac{1}{2\psi_0}(1-\frac{1}{\Lambda})^2\Bigg)
+\end{equation}
+\begin{equation}
+Z = \frac{2227.138^2}{1.5154\cdot9.81}\Bigg([1-\frac{1}{1.7446}(\ln 1.7446+1)]-\frac{1}{2\cdot1.5154}(1-\frac{1}{1.7446})^2\Bigg)=
+\end{equation}
+\begin{equation}
+333655.25(0.1078-0.0601)=15915.356 \text{m} = 15.915 \text{km}
+\end{equation}
+
+
+For the second burnout, the velocity increment is computed in the same way. First find the effective exhaust velocity.
+\begin{equation}
+c_{eff} = \frac{T_{core}+3T_{booster}}{m_{core}+3m_{booster}}=\frac{1000000+3\cdot300000}{339.789+3\cdot152.905}=2379.449571 \text{m/s}
+\end{equation}
+The end mass, is the initial mass after the seperation of the first 6 boosters, minus the propellant used by the core and the 3 boosters. 
+\begin{equation}
+M_e = M_0-m_{core}2t_{burn}-6M_{booster}-3m_{booster}t_{burn}=60047.56\text{kg}
+\end{equation}
+The initial mass for the second burnout stage is 
+\begin{equation}
+M_{0_2} = M_0-m_{core}t_{burn}-6M_{booster}=107957.8\text{kg}
+\end{equation}
+Based on the mass and effective velocity the velocity increment is 
+\begin{equation}
+\Delta V_2 = \ln\Lambda c_{eff}-g_0t_b = \ln\frac{107957.8}{60047.56} \cdot2379.449571-9.81\cdot60= 807.19\text{m/s}
+\end{equation}
+This means that the velocity after the second burnout is 
+\begin{equation}
+V_{e_2} = 550.954+807.19=1358.147
+\end{equation}
+
+For the height we need to know the initial thrust load again.
+\begin{equation}
+\psi_0 = \frac{T}{M_0g_0} = \frac{1900000}{107957.8\cdot9.81}=1.794
+\end{equation}
+The height becomes:
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}\Bigg([1-\frac{1}{\Lambda}(\ln\Lambda+1)]-\frac{1}{2\psi_0}(1-\frac{1}{\Lambda})^2\Bigg) = \frac{2379.4495^2}{1.794\cdot9.81}(0.11753-0.0552079) = 20049.5 \text{m} = 20.0495 \text{km}
+\end{equation}
+So adding the two heights, the total height after the second burnout becomes
+\begin{equation}
+h_{e_2} = 15.915+ 20.0495 = 35.965 \text{km}
+\end{equation}
+
+\subsection{e}
+This question follows the same methods to find the velocity and altitude. Taking into account that the burn is 10 seconds shorter than designed.
+
+First the effective velocity of the core stage is
+\begin{equation}
+c_{eff} = \frac{T}{m} = \frac{1000000}{339.789} = 2943 \text{m/s}
+\end{equation}
+Secondly, the mass at the start of the last burn phase is given by
+\begin{equation}
+M_{0_3} = M_0 - 9M_{booster}-m_{core}2t_{burn} = 57570.46 \text{kg}
+\end{equation}
+The end mass is 
+\begin{equation}
+M_{e_3} = M_{0_3} - m_{core}\cdot130 = 13397.89 \text{kg}
+\end{equation}
+The velocity follows from
+\begin{equation}
+\Delta V_3 = \ln\Lambda c_{eff}-g_0t_b = \ln\frac{57570.46}{13397.89} \cdot2943-9.81\cdot130= 3015.336\text{m/s}
+\end{equation}
+The total velocity is 
+\begin{equation}
+V = 1358.147+3015.336 = 4373.48 \text{m/s}
+\end{equation}
+The initial thurst load is 
+\begin{equation}
+\psi_0 = \frac{T}{M_0g_0}  = 1.7706
+\end{equation}
+The height follows from
+\begin{equation}
+Z = \frac{c_{eff}^2}{\psi_0g_0}\Bigg([1-\frac{1}{\Lambda}(\ln\Lambda+1)]-\frac{1}{2\psi_0}(1-\frac{1}{\Lambda})^2\Bigg) = \frac{2943^2}{1.7706\cdot9.81}(0.428-0.1662) = 130545.1372 \text{m} = 130.545 \text{km}
+\end{equation}
+The total height after the core burnout is
+\begin{equation}
+h = 130.545  + 35.965 = 166.54 \text{km}
+\end{equation}
+
+\subsection{f}
+Velocity at the maximum height is zero. With the energy equation, the height achieved after burnout is found
+\begin{equation}
+\Delta h = \frac{V^2}{2g_0}
+\end{equation}
+Given the velocity and height after the core burnout
+the extra heigth until the velocity is zero becomes
+\begin{equation}
+\Delta h = \frac{4373.48^2}{2\cdot9.81}=947.889 \text{km}
+\end{equation}
+So the total heigth achieved is 
+\begin{equation}
+h = 947.889+ 166.54 = 1141.4 \text{km}
+\end{equation}
+
+The designed maximum heigth is given in the question. So the difference is
+\begin{equation}
+\Delta h_{error} = 1765 - 1141.4 = 623.6 \text{km}
+\end{equation}

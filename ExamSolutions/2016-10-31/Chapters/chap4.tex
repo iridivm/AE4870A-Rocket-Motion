@@ -1,1 +1,157 @@
 \section{ Balistic flight over earth:Spherical.Flight range phi-0 }\label{sec:q4}    
+\subsection{a}
+Sketch is just figure 4.2 in the lecute notes on page 77 \cite{lectureNotes}.
+
+\subsection{b}
+The derivation is done in a couple of steps. First, determine $a/R_e$, $p/R_e$. From there, the eccentricity is found with the equation $e = \sqrt{1-a/p}$. From there, the trajectory equation of conic sections can be filled in and by realizing that the angle $psi_0=\pi/2-\theta_0$, the equation is found that is asked.
+
+So first the semi major axis. This is found with the 'vis-viva equation' The energy equation.
+\begin{equation}
+-\frac{\mu}{2a}=\frac{V^2}{2}-\frac{\mu}{r}
+\end{equation}
+Using the initial condition $r=R_e$ and $V=V_0$, the semi major axis is found
+\begin{equation}
+-\frac{\mu}{2a}=\frac{V_0^2}{2}-\frac{\mu}{R_e}
+\end{equation}
+\begin{equation}
+\frac{1}{a} = -\frac{V_0^2}{\mu}+\frac{1}{2R_e}
+\end{equation}
+\begin{equation}
+\frac{a}{R_e} = -\frac{\mu}{V_0^2R_e}+\frac{1}{2}=\frac{1}{2-\frac{V_0^2}{\mu/R_e}}
+\end{equation}
+using the fact that 
+\begin{equation}
+S_0 = \frac{V_0}{\sqrt{\mu/R_e}}
+\end{equation}
+\begin{equation}
+\frac{a}{R_e} =\frac{1}{2-S_0^2}
+\end{equation}
+
+For the semi latus rectum, the angular momentum is used.
+\begin{equation}
+p = \frac{H^2}{r}
+\end{equation}
+where
+\begin{equation}
+H = rV\cos\gamma
+\end{equation}
+using the initial conditions this becomes:
+\begin{equation}
+H = R_eV_0\cos\gamma_0
+\end{equation}
+Thus, the semi latus rectum becomes
+\begin{equation}
+p = \frac{R_e^2V_0^2\cos^2\gamma_0}{\mu}
+\end{equation}
+\begin{equation}
+\frac{p}{R_e}=\frac{R_eV_0^2cos^2\gamma_0}{\mu}=S_0^2\cos^2\gamma_0
+\end{equation}
+With these equations the eccentricity is found
+\begin{equation}
+\frac{p}{a}=\frac{S_0^2\cos^2\gamma_0}{\frac{1}{2-S_0^2}}=S_0^2\cos^2\gamma_0(2-S_0^2)
+\end{equation}
+The eccentricy beomces
+\begin{equation}
+e = \sqrt{1-p/a}=\sqrt{1-S_0^2\cos^2\gamma_0(2-S_0^2)}
+\end{equation}
+
+Now using the trajectory equation, 
+\begin{equation}
+r = \frac{p}{1+e\cos\theta}
+\end{equation}
+\begin{equation}
+\frac{r}{R_e}=\frac{\frac{p}{R_e}}{1+\sqrt{1-S_0^2\cos^2\gamma_0(2-S_0^2})\cos\theta}
+\end{equation}
+Plugging in the initial conditions 
+\begin{equation}
+1 = \frac{S_0^2\cos^2\gamma_0}{1+\sqrt{1-S_0^2\cos^2\gamma_0(2-S_0^2})\cos\theta}
+\end{equation}
+We can rewrite this to isolate the cosine part.
+\begin{equation}
+-\cos\theta = \frac{1-S_0^2\cos^2\gamma_0}{\sqrt{1-S_0^2\cos^2\gamma_0(2-S_0^2)}}
+\end{equation}
+Using the fact that $\psi_0 = \pi/2-\theta_0$:
+\begin{equation}
+\cos\psi_0=\frac{1-S_0^2\cos^2\gamma_0}{\sqrt{1-S_0^2\cos^2\gamma_0(2-S_0^2)}}
+\end{equation}
+\begin{equation}
+\psi_0=\arccos[\frac{1-S_0^2\cos^2\gamma_0}{\sqrt{1-S_0^2\cos^2\gamma_0(2-S_0^2)}}]
+\end{equation}
+
+\subsection*{c}
+For this part, it is meant to rewrite the equation found in part b to be able to find an expression for the initial flight path angle.
+
+First we need to remove the square root out of the equation.
+
+This is done with the following identity
+\begin{equation}
+\tan^2\psi_0=\frac{\sin^2\psi_0}{\cos^2\psi_0}=\frac{1-\cos^2\psi_0}{\cos^2\psi_0}=\frac{1}{\cos^2\psi_0}-1
+\end{equation}
+
+So first square the entire equation.
+\begin{equation}
+\cos^2\psi_0 = \frac{(1-S_0^2\cos^2\gamma_0)^2}{1-S_0^2\cos^2\gamma_0(2-S_0^2)}
+\end{equation}
+\begin{equation}
+\frac{1}{\cos^2\psi_0}=\frac{1-S_0^2\cos^2\gamma_0(2-S_0^2)}{(1-S_0^2\cos^2\gamma_0)^2}
+\end{equation}
+\begin{equation}
+\frac{1}{\cos^2\psi_0}-1=\frac{1-S_0^2\cos^2\gamma_0(2-S_0^2)-(1-S_0^2\cos^2\gamma_0)^2}{(1-S_0^2\cos^2\gamma_0)^2}
+\end{equation}
+Simplifying this 
+\begin{equation}
+\frac{1}{\cos^2\psi_0}-1=\frac{S_0^4\cos^2\gamma_0(1-\cos^2\gamma_0)}{(1-S_0^2\cos^2\gamma_0)^2}
+\end{equation}
+
+Now de identity is used
+\begin{equation}
+\tan^2\psi_0=\frac{S_0^4\cos^2\gamma_0(1-\cos^2\gamma_0)}{(1-S_0^2\cos^2\gamma_0)^2}
+\end{equation}
+\begin{equation}
+\tan^2\psi_0=\frac{S_0^4\cos^2\gamma_0\sin^2\gamma_0}{(1-S_0^2\cos^2\gamma_0)^2}
+\end{equation}
+\begin{equation}
+\tan^2\psi_0=\frac{S_0^4\sin^22\gamma_0}{
+4(1-S_0^2\cos^2\gamma_0)^2}
+\end{equation}
+Now by square rooting both sides
+\begin{equation}
+\tan\psi_0=\frac{S_0^2\sin2\gamma_0}{2(1-S_0^2\cos^2\gamma_0)}
+\end{equation}
+
+Now that the squareroot has been removed out of the fraction, it is needed that the two terms of the flight path angle is removed to a single term. First we do cross multiplication to remove the fractions
+\begin{equation}
+\tan\psi_0=\frac{\sin\psi_0}{\cos\psi_0}=\frac{S_0^2\sin2\gamma_0}{2(1-S_0^2\cos^2\gamma_0)}
+\end{equation}
+
+We first reduce the $\cos^2\gamma_0$ term in the fraction. The identity used is 
+\begin{equation}
+2\cos^2\gamma_0-1=\cos2\gamma_0\;\rightarrow\;\cos^2\gamma_0 = \frac{\cos2\gamma_0+1}{2}
+\end{equation}
+\begin{equation}
+\frac{\sin\psi_0}{\cos\psi_0}=\frac{S_0^2\sin2\gamma_0}{2-2S_0^2\cos^2\gamma_0}=\frac{S_0^2\sin2\gamma_0}{2-S_0^2(\cos2\gamma_0+1)}
+\end{equation}
+From there the cross multiplication is done. Make sure that the term with the flight path angle will be on one side of the equation. The other terms on the other side
+\begin{equation}
+S_0^2(\cos2\gamma_0\sin\psi_0+\sin2\gamma_0\cos\psi_0)=(2-S_0^2)\sin\psi_0
+\end{equation}
+The terms with the flight path angle can be reduced with the identity
+\begin{equation}
+\cos2\gamma_0\sin\psi_0+\sin2\gamma_0\cos\psi_0=\sin(2\gamma_0+psi_0)
+\end{equation}
+Thus
+\begin{equation}
+S_0^2\sin(2\gamma_0+\psi_0)=(2-S_0^2)\sin\psi_0
+\end{equation}
+This is the reduced form of the equation with which the flight path angle can be computed. 
+\begin{equation}
+2\gamma_0+\psi_0 = \arcsin[\frac{(2-S_0^2)\sin\psi_0}{S_0^2}]
+\end{equation}
+\begin{equation}
+\gamma_0 = \frac{\arcsin[\frac{(2-S_0^2)\sin\psi_0}{S_0^2}]-\psi_0}{2}
+\end{equation}
+Filling it in knowing that $\psi_0 =\frac{d/2}{R_e}=0.7071182 $, and $S_0 = \frac{V_0}{\sqrt{\mu/R_e}}=1000$ yields:
+\begin{equation}
+\gamma_0 \approx  -0.707 \text{rad}
+\end{equation}
+
